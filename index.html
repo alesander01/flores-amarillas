@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Para ti 💛</title>
+    <title>Flores Amarillas 💛</title>
 
     <style>
         * {
@@ -14,145 +14,207 @@
         body {
             margin: 0;
             min-height: 100vh;
-            overflow: hidden;
-            font-family: "Georgia", serif;
-            background: linear-gradient(135deg, #fff8cf, #ffe680, #fff4a8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #5c4500;
+            overflow-x: hidden;
+            overflow-y: auto;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fff8b5, #ffd54f, #ffca28);
+            color: #5d4037;
         }
 
         .contenedor {
-            width: 90%;
-            max-width: 500px;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.78);
-            padding: 40px 25px;
-            border-radius: 30px;
-            box-shadow: 0 15px 40px rgba(120, 90, 0, 0.20);
-            position: relative;
-            z-index: 10;
-            animation: aparecer 1.5s ease;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        h1 {
-            font-size: 2.3rem;
-            margin-bottom: 10px;
-            color: #d69e00;
+        .tarjeta {
+            width: 100%;
+            max-width: 600px;
+            padding: 35px 25px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+            z-index: 2;
         }
 
         .flor-principal {
             font-size: 80px;
-            animation: flotar 3s ease-in-out infinite;
-            margin: 10px 0;
+            animation: aparecer 2s ease-in-out, flotar 3s ease-in-out infinite;
+        }
+
+        h1 {
+            margin: 15px 0;
+            font-size: 34px;
+            color: #d89b00;
         }
 
         h2 {
-            font-size: 1.5rem;
-            margin: 10px 0 20px;
+            font-size: 24px;
+            color: #8d6e63;
+            margin-bottom: 20px;
         }
 
         p {
-            font-size: 1.15rem;
+            font-size: 18px;
             line-height: 1.7;
-            margin: 12px 0;
+            margin: 15px 0;
         }
 
-        .firma {
+        .mensaje {
             margin-top: 25px;
-            font-size: 1.1rem;
-            font-style: italic;
+            font-size: 20px;
+            font-weight: bold;
+            color: #c68a00;
         }
 
         .corazon {
-            color: #e9a900;
-            font-size: 28px;
+            font-size: 35px;
+            margin-top: 20px;
+            animation: latido 1.3s infinite;
         }
 
+        /* Flores que caen */
         .flor {
-            position: absolute;
-            font-size: 35px;
+            position: fixed;
+            top: -50px;
+            font-size: 25px;
             animation: caer linear infinite;
-            opacity: 0.8;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .flor:nth-child(1) {
+            left: 5%;
+            animation-duration: 7s;
+            animation-delay: 0s;
+        }
+
+        .flor:nth-child(2) {
+            left: 20%;
+            animation-duration: 9s;
+            animation-delay: 2s;
+        }
+
+        .flor:nth-child(3) {
+            left: 35%;
+            animation-duration: 8s;
+            animation-delay: 1s;
+        }
+
+        .flor:nth-child(4) {
+            left: 50%;
+            animation-duration: 10s;
+            animation-delay: 3s;
+        }
+
+        .flor:nth-child(5) {
+            left: 65%;
+            animation-duration: 7s;
+            animation-delay: 1.5s;
+        }
+
+        .flor:nth-child(6) {
+            left: 80%;
+            animation-duration: 9s;
+            animation-delay: 4s;
+        }
+
+        .flor:nth-child(7) {
+            left: 92%;
+            animation-duration: 8s;
+            animation-delay: 2.5s;
+        }
+
+        @keyframes caer {
+            0% {
+                transform: translateY(-50px) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
         }
 
         @keyframes aparecer {
-            from {
+            0% {
                 opacity: 0;
-                transform: translateY(30px) scale(0.95);
+                transform: scale(0.5);
             }
-            to {
+
+            100% {
                 opacity: 1;
-                transform: translateY(0) scale(1);
+                transform: scale(1);
             }
         }
 
         @keyframes flotar {
             0%, 100% {
-                transform: translateY(0) rotate(-3deg);
+                transform: translateY(0);
             }
 
             50% {
-                transform: translateY(-12px) rotate(3deg);
+                transform: translateY(-10px);
             }
         }
 
-        @keyframes caer {
-            from {
-                transform: translateY(-100px) rotate(0deg);
+        @keyframes latido {
+            0%, 100% {
+                transform: scale(1);
             }
 
-            to {
-                transform: translateY(110vh) rotate(360deg);
+            50% {
+                transform: scale(1.2);
             }
         }
 
-        .flor:nth-child(1) {
-            left: 5%;
-            animation-duration: 8s;
-        }
+        /* Ajustes para celulares */
+        @media (max-width: 600px) {
 
-        .flor:nth-child(2) {
-            left: 20%;
-            animation-duration: 11s;
-            animation-delay: 2s;
-        }
+            .contenedor {
+                padding: 25px 15px;
+                align-items: flex-start;
+            }
 
-        .flor:nth-child(3) {
-            left: 40%;
-            animation-duration: 9s;
-            animation-delay: 1s;
-        }
+            .tarjeta {
+                padding: 30px 20px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
 
-        .flor:nth-child(4) {
-            left: 65%;
-            animation-duration: 12s;
-            animation-delay: 3s;
-        }
+            .flor-principal {
+                font-size: 65px;
+            }
 
-        .flor:nth-child(5) {
-            left: 85%;
-            animation-duration: 10s;
-            animation-delay: 1s;
-        }
+            h1 {
+                font-size: 28px;
+            }
 
-        .boton {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 13px 25px;
-            background: #e8ad00;
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-family: Arial, sans-serif;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+            h2 {
+                font-size: 21px;
+            }
 
-        .boton:hover {
-            transform: scale(1.05);
-            background: #cf9800;
+            p {
+                font-size: 17px;
+                line-height: 1.6;
+            }
+
+            .mensaje {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
@@ -160,42 +222,53 @@
 <body>
 
     <!-- Flores cayendo -->
-    <div class="flor">🌼</div>
     <div class="flor">🌻</div>
     <div class="flor">🌼</div>
     <div class="flor">🌻</div>
     <div class="flor">🌼</div>
+    <div class="flor">🌻</div>
+    <div class="flor">🌼</div>
+    <div class="flor">🌻</div>
 
     <div class="contenedor">
 
-        <div class="flor-principal">🌻</div>
+        <div class="tarjeta">
 
-        <h1>Feliz día de las flores amarillas 💛</h1>
+            <div class="flor-principal">
+                🌻
+            </div>
 
-        <h2>Para alguien muy especial</h2>
+            <h1>
+                Feliz Día de las Flores Amarillas 💛
+            </h1>
 
-        <p>
-            Hoy quería regalarte algo diferente...
-        </p>
+            <h2>
+                Para una persona muy especial 🌼
+            </h2>
 
-        <p>
-            Un pequeño detalle para recordarte que eres
-            una persona muy especial para mí.
-        </p>
+            <p>
+                Hoy quería regalarte estas flores amarillas
+                para recordarte lo especial que eres para mí.
+            </p>
 
-        <p>
-            Espero que estas flores te saquen una sonrisa
-            y que tengas un día tan bonito como tú. 🌻
-        </p>
+            <p>
+                Espero que tengas un día bonito,
+                lleno de momentos que te hagan sonreír.
+            </p>
 
-        <p>
-            Gracias por formar parte de mi vida.
-        </p>
+            <p>
+                Aunque estas flores puedan parecer sencillas,
+                llevan conmigo un sentimiento muy grande.
+            </p>
 
-        <div class="corazon">💛</div>
+            <p class="mensaje">
+                Gracias por formar parte de mi vida. 💛
+            </p>
 
-        <div class="firma">
-            Con mucho cariño, para ti 🌼
+            <div class="corazon">
+                ❤️
+            </div>
+
         </div>
 
     </div>
