@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Flores Amarillas 💛</title>
+    <title>Para ti 💛</title>
 
     <style>
         * {
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -16,122 +20,186 @@
             min-height: 100vh;
             overflow-x: hidden;
             overflow-y: auto;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #fff8b5, #ffd54f, #ffca28);
-            color: #5d4037;
+            font-family: "Georgia", serif;
+            color: #5a4300;
+
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.75), transparent 25%),
+                radial-gradient(circle at 80% 30%, rgba(255,241,118,0.6), transparent 30%),
+                linear-gradient(135deg, #fffde7, #fff59d, #ffd54f, #ffca28);
         }
 
-        .contenedor {
-            min-height: 100vh;
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        /* =========================
+           FONDO
+        ========================== */
 
-        .tarjeta {
-            width: 100%;
-            max-width: 600px;
-            padding: 35px 25px;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            position: relative;
-            z-index: 2;
-        }
-
-        .flor-principal {
-            font-size: 80px;
-            animation: aparecer 2s ease-in-out, flotar 3s ease-in-out infinite;
-        }
-
-        h1 {
-            margin: 15px 0;
-            font-size: 34px;
-            color: #d89b00;
-        }
-
-        h2 {
-            font-size: 24px;
-            color: #8d6e63;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 1.7;
-            margin: 15px 0;
-        }
-
-        .mensaje {
-            margin-top: 25px;
-            font-size: 20px;
-            font-weight: bold;
-            color: #c68a00;
-        }
-
-        .corazon {
-            font-size: 35px;
-            margin-top: 20px;
-            animation: latido 1.3s infinite;
-        }
-
-        /* Flores que caen */
-        .flor {
+        .fondo {
             position: fixed;
-            top: -50px;
-            font-size: 25px;
-            animation: caer linear infinite;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .brillo {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.22);
+            filter: blur(10px);
+            animation: brillo 6s ease-in-out infinite;
+        }
+
+        .brillo:nth-child(1) {
+            top: 5%;
+            left: -80px;
+        }
+
+        .brillo:nth-child(2) {
+            bottom: 10%;
+            right: -80px;
+            animation-delay: 2s;
+        }
+
+        @keyframes brillo {
+            0%, 100% {
+                transform: scale(1);
+                opacity: .5;
+            }
+
+            50% {
+                transform: scale(1.25);
+                opacity: .8;
+            }
+        }
+
+        /* =========================
+           FLORES GRANDES
+        ========================== */
+
+        .flor-grande {
+            position: fixed;
+            font-size: 100px;
             z-index: 1;
             pointer-events: none;
+            animation: balanceo 5s ease-in-out infinite;
+            filter: drop-shadow(0 5px 5px rgba(120, 80, 0, .15));
+        }
+
+        .flor-1 {
+            left: -25px;
+            top: 8%;
+        }
+
+        .flor-2 {
+            right: -30px;
+            top: 18%;
+            font-size: 120px;
+            animation-delay: 1s;
+        }
+
+        .flor-3 {
+            left: -35px;
+            bottom: 12%;
+            font-size: 115px;
+            animation-delay: 2s;
+        }
+
+        .flor-4 {
+            right: -35px;
+            bottom: 5%;
+            font-size: 105px;
+            animation-delay: 3s;
+        }
+
+        @keyframes balanceo {
+            0%, 100% {
+                margin-top: 0;
+                transform: rotate(-5deg);
+            }
+
+            50% {
+                margin-top: 15px;
+                transform: rotate(5deg);
+            }
+        }
+
+        /* =========================
+           FLORES CAYENDO
+        ========================== */
+
+        .flor {
+            position: fixed;
+            top: -100px;
+            z-index: 3;
+            pointer-events: none;
+            animation: caer linear infinite;
+        }
+
+        .flor span {
+            display: block;
+            filter: drop-shadow(0 3px 3px rgba(120, 80, 0, .15));
         }
 
         .flor:nth-child(1) {
-            left: 5%;
-            animation-duration: 7s;
-            animation-delay: 0s;
+            left: 3%;
+            font-size: 38px;
+            animation-duration: 8s;
         }
 
         .flor:nth-child(2) {
-            left: 20%;
-            animation-duration: 9s;
+            left: 12%;
+            font-size: 55px;
+            animation-duration: 11s;
             animation-delay: 2s;
         }
 
         .flor:nth-child(3) {
-            left: 35%;
-            animation-duration: 8s;
-            animation-delay: 1s;
-        }
-
-        .flor:nth-child(4) {
-            left: 50%;
-            animation-duration: 10s;
-            animation-delay: 3s;
-        }
-
-        .flor:nth-child(5) {
-            left: 65%;
-            animation-duration: 7s;
-            animation-delay: 1.5s;
-        }
-
-        .flor:nth-child(6) {
-            left: 80%;
+            left: 25%;
+            font-size: 32px;
             animation-duration: 9s;
             animation-delay: 4s;
         }
 
-        .flor:nth-child(7) {
-            left: 92%;
+        .flor:nth-child(4) {
+            left: 38%;
+            font-size: 60px;
+            animation-duration: 12s;
+            animation-delay: 1s;
+        }
+
+        .flor:nth-child(5) {
+            left: 52%;
+            font-size: 40px;
             animation-duration: 8s;
-            animation-delay: 2.5s;
+            animation-delay: 3s;
+        }
+
+        .flor:nth-child(6) {
+            left: 65%;
+            font-size: 55px;
+            animation-duration: 10s;
+            animation-delay: 5s;
+        }
+
+        .flor:nth-child(7) {
+            left: 78%;
+            font-size: 35px;
+            animation-duration: 9s;
+            animation-delay: 2s;
+        }
+
+        .flor:nth-child(8) {
+            left: 90%;
+            font-size: 60px;
+            animation-duration: 13s;
+            animation-delay: 4s;
         }
 
         @keyframes caer {
             0% {
-                transform: translateY(-50px) rotate(0deg);
+                transform: translateY(-100px) rotate(0deg);
                 opacity: 0;
             }
 
@@ -144,31 +212,255 @@
             }
 
             100% {
-                transform: translateY(110vh) rotate(360deg);
+                transform: translateY(115vh) rotate(360deg);
                 opacity: 0;
             }
         }
 
+        /* =========================
+           CONTENEDOR
+        ========================== */
+
+        .contenedor {
+            position: relative;
+            z-index: 5;
+
+            min-height: 100vh;
+            padding: 60px 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* =========================
+           TARJETA
+        ========================== */
+
+        .tarjeta {
+            width: 100%;
+            max-width: 650px;
+
+            padding: 45px 35px;
+
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.92);
+
+            border: 2px solid rgba(255, 193, 7, .35);
+
+            border-radius: 35px;
+
+            box-shadow:
+                0 20px 60px rgba(120, 80, 0, .20),
+                inset 0 0 30px rgba(255, 213, 79, .15);
+
+            backdrop-filter: blur(8px);
+
+            animation: aparecer 1.5s ease;
+        }
+
         @keyframes aparecer {
-            0% {
+            from {
                 opacity: 0;
-                transform: scale(0.5);
+                transform: translateY(30px) scale(.95);
             }
 
-            100% {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* =========================
+           FLOR PRINCIPAL
+        ========================== */
+
+        .flor-principal {
+            font-size: 115px;
+            line-height: 1;
+            margin-bottom: 15px;
+
+            filter: drop-shadow(0 8px 5px rgba(120, 80, 0, .2));
+
+            animation: florPrincipal 3s ease-in-out infinite;
+        }
+
+        @keyframes florPrincipal {
+            0%, 100% {
+                transform: rotate(-5deg) translateY(0);
+            }
+
+            50% {
+                transform: rotate(5deg) translateY(-10px);
+            }
+        }
+
+        /* =========================
+           TITULOS
+        ========================== */
+
+        h1 {
+            margin: 10px 0;
+
+            font-size: 38px;
+
+            color: #d59600;
+
+            text-shadow:
+                0 2px 2px rgba(255, 193, 7, .2);
+        }
+
+        h2 {
+            margin: 15px 0 25px;
+
+            font-size: 25px;
+
+            color: #8a6a00;
+
+            font-weight: normal;
+        }
+
+        /* =========================
+           FOTO
+        ========================== */
+
+        .marco-foto {
+            position: relative;
+
+            width: 100%;
+            max-width: 480px;
+
+            margin: 30px auto;
+
+            padding: 12px;
+
+            background: linear-gradient(
+                135deg,
+                #ffd54f,
+                #fff8b5,
+                #ffc107
+            );
+
+            border-radius: 28px;
+
+            box-shadow:
+                0 12px 35px rgba(120, 80, 0, .22);
+
+            animation: aparecerFoto 1.8s ease;
+        }
+
+        .foto-romantica {
+            display: block;
+
+            width: 100%;
+            height: auto;
+
+            max-height: 600px;
+
+            object-fit: cover;
+
+            border-radius: 20px;
+
+            border: 4px solid white;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, .18);
+        }
+
+        .flores-foto {
+            position: absolute;
+
+            font-size: 42px;
+
+            z-index: 2;
+
+            filter:
+                drop-shadow(0 3px 3px rgba(120, 80, 0, .25));
+        }
+
+        .flores-foto.arriba-izquierda {
+            top: -25px;
+            left: -20px;
+            transform: rotate(-20deg);
+        }
+
+        .flores-foto.arriba-derecha {
+            top: -25px;
+            right: -20px;
+            transform: rotate(20deg);
+        }
+
+        .flores-foto.abajo-izquierda {
+            bottom: -25px;
+            left: -20px;
+            transform: rotate(20deg);
+        }
+
+        .flores-foto.abajo-derecha {
+            bottom: -25px;
+            right: -20px;
+            transform: rotate(-20deg);
+        }
+
+        @keyframes aparecerFoto {
+            from {
+                opacity: 0;
+                transform: scale(.9);
+            }
+
+            to {
                 opacity: 1;
                 transform: scale(1);
             }
         }
 
-        @keyframes flotar {
-            0%, 100% {
-                transform: translateY(0);
-            }
+        /* =========================
+           TEXTO
+        ========================== */
 
-            50% {
-                transform: translateY(-10px);
-            }
+        p {
+            margin: 20px 0;
+
+            font-size: 19px;
+
+            line-height: 1.8;
+
+            color: #604b12;
+        }
+
+        .mensaje {
+            margin-top: 30px;
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+            color: #d28c00;
+        }
+
+        /* =========================
+           SEPARADOR
+        ========================== */
+
+        .separador {
+            margin: 25px auto;
+
+            font-size: 28px;
+
+            letter-spacing: 8px;
+        }
+
+        /* =========================
+           CORAZÓN
+        ========================== */
+
+        .corazon {
+            margin-top: 25px;
+
+            font-size: 48px;
+
+            animation: latido 1.3s infinite;
         }
 
         @keyframes latido {
@@ -181,39 +473,88 @@
             }
         }
 
-        /* Ajustes para celulares */
+        /* =========================
+           FIRMA
+        ========================== */
+
+        .firma {
+            margin-top: 25px;
+
+            font-size: 17px;
+
+            font-style: italic;
+
+            color: #8c6d00;
+        }
+
+        /* =========================
+           CELULAR
+        ========================== */
+
         @media (max-width: 600px) {
 
             .contenedor {
-                padding: 25px 15px;
+                min-height: auto;
+                padding: 40px 15px;
                 align-items: flex-start;
             }
 
             .tarjeta {
-                padding: 30px 20px;
-                margin-top: 20px;
-                margin-bottom: 20px;
+                padding: 35px 20px;
+                margin: 15px 0 30px;
+                border-radius: 28px;
             }
 
             .flor-principal {
-                font-size: 65px;
+                font-size: 90px;
             }
 
             h1 {
-                font-size: 28px;
+                font-size: 30px;
+                line-height: 1.25;
             }
 
             h2 {
                 font-size: 21px;
+                line-height: 1.4;
             }
 
             p {
                 font-size: 17px;
-                line-height: 1.6;
+                line-height: 1.7;
             }
 
             .mensaje {
-                font-size: 18px;
+                font-size: 19px;
+            }
+
+            .corazon {
+                font-size: 42px;
+            }
+
+            .flor-grande {
+                font-size: 70px;
+            }
+
+            .flor-2 {
+                font-size: 80px;
+            }
+
+            .flor-3 {
+                font-size: 80px;
+            }
+
+            .flor-4 {
+                font-size: 75px;
+            }
+
+            .flores-foto {
+                font-size: 32px;
+            }
+
+            .marco-foto {
+                margin: 25px auto;
+                padding: 9px;
             }
         }
     </style>
@@ -221,14 +562,43 @@
 
 <body>
 
-    <!-- Flores cayendo -->
-    <div class="flor">🌻</div>
-    <div class="flor">🌼</div>
-    <div class="flor">🌻</div>
-    <div class="flor">🌼</div>
-    <div class="flor">🌻</div>
-    <div class="flor">🌼</div>
-    <div class="flor">🌻</div>
+    <!-- =========================
+         FONDO
+    ========================== -->
+
+    <div class="fondo">
+        <div class="brillo"></div>
+        <div class="brillo"></div>
+    </div>
+
+
+    <!-- =========================
+         FLORES GRANDES
+    ========================== -->
+
+    <div class="flor-grande flor-1">🌻</div>
+    <div class="flor-grande flor-2">🌻</div>
+    <div class="flor-grande flor-3">🌻</div>
+    <div class="flor-grande flor-4">🌻</div>
+
+
+    <!-- =========================
+         FLORES CAYENDO
+    ========================== -->
+
+    <div class="flor"><span>🌼</span></div>
+    <div class="flor"><span>🌻</span></div>
+    <div class="flor"><span>🌼</span></div>
+    <div class="flor"><span>🌻</span></div>
+    <div class="flor"><span>🌼</span></div>
+    <div class="flor"><span>🌻</span></div>
+    <div class="flor"><span>🌼</span></div>
+    <div class="flor"><span>🌻</span></div>
+
+
+    <!-- =========================
+         CONTENIDO
+    ========================== -->
 
     <div class="contenedor">
 
@@ -245,6 +615,43 @@
             <h2>
                 Para una persona muy especial 🌼
             </h2>
+
+
+            <!-- =========================
+                 FOTO
+            ========================== -->
+
+            <div class="marco-foto">
+
+                <div class="flores-foto arriba-izquierda">
+                    🌻
+                </div>
+
+                <div class="flores-foto arriba-derecha">
+                    🌼
+                </div>
+
+                <div class="flores-foto abajo-izquierda">
+                    🌼
+                </div>
+
+                <div class="flores-foto abajo-derecha">
+                    🌻
+                </div>
+
+                <img
+                    src="foto.heic"
+                    alt="Un recuerdo especial"
+                    class="foto-romantica"
+                >
+
+            </div>
+
+
+            <div class="separador">
+                🌼 🌻 🌼
+            </div>
+
 
             <p>
                 Hoy quería regalarte estas flores amarillas
@@ -265,8 +672,19 @@
                 Gracias por formar parte de mi vida. 💛
             </p>
 
+
+            <div class="separador">
+                🌻 🌼 🌻
+            </div>
+
+
             <div class="corazon">
                 ❤️
+            </div>
+
+
+            <div class="firma">
+                Con mucho cariño 💛
             </div>
 
         </div>
