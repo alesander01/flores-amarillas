@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -166,8 +167,6 @@
             animation: girar 4s linear infinite;
         }
 
-        /* FLORES PEQUEÑAS Y MEDIANAS */
-
         .flor:nth-child(1) {
             left: 2%;
             font-size: 35px;
@@ -264,8 +263,6 @@
             animation-duration: 13s;
             animation-delay: 6s;
         }
-
-        /* SEGUNDA CAPA DE FLORES */
 
         .flor:nth-child(15) {
             left: 5%;
@@ -411,15 +408,12 @@
 
         .flor-principal {
             font-size: 125px;
-
             line-height: 1;
-
             margin-bottom: 15px;
 
-            filter:
-                drop-shadow(
-                    0 8px 5px rgba(120, 80, 0, .2)
-                );
+            filter: drop-shadow(
+                0 8px 5px rgba(120, 80, 0, .2)
+            );
 
             animation:
                 florPrincipal 3s ease-in-out infinite;
@@ -603,12 +597,374 @@
         }
 
 
+        /* =====================================================
+           RAMO GRANDE Y ABUNDANTE DE FLORES AMARILLAS
+        ====================================================== */
+
+        .ramo {
+            position: relative;
+
+            width: 100%;
+            max-width: 570px;
+
+            height: 300px;
+
+            margin: 25px auto 5px;
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+
+            overflow: hidden;
+
+            filter:
+                drop-shadow(
+                    0 12px 12px rgba(100, 70, 0, .18)
+                );
+        }
+
+        /* Tallos */
+
+        .tallo {
+            position: absolute;
+
+            bottom: 15px;
+            left: 50%;
+
+            width: 7px;
+            height: 190px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #3f7d25,
+                    #78a93b,
+                    #356b20
+                );
+
+            transform-origin: bottom center;
+
+            box-shadow:
+                0 0 3px rgba(40, 90, 20, .4);
+        }
+
+        .tallo:nth-child(1) {
+            transform: rotate(-28deg);
+        }
+
+        .tallo:nth-child(2) {
+            transform: rotate(-20deg);
+            height: 210px;
+        }
+
+        .tallo:nth-child(3) {
+            transform: rotate(-12deg);
+            height: 225px;
+        }
+
+        .tallo:nth-child(4) {
+            transform: rotate(-5deg);
+            height: 215px;
+        }
+
+        .tallo:nth-child(5) {
+            transform: rotate(5deg);
+            height: 230px;
+        }
+
+        .tallo:nth-child(6) {
+            transform: rotate(13deg);
+            height: 220px;
+        }
+
+        .tallo:nth-child(7) {
+            transform: rotate(22deg);
+            height: 205px;
+        }
+
+        .tallo:nth-child(8) {
+            transform: rotate(30deg);
+            height: 185px;
+        }
+
+        /* Flores del ramo */
+
+        .flor-ramo {
+            position: absolute;
+
+            z-index: 4;
+
+            font-size: 72px;
+
+            line-height: 1;
+
+            filter:
+                drop-shadow(
+                    0 5px 4px rgba(100, 70, 0, .2)
+                );
+
+            animation:
+                movimientoRamo 4s ease-in-out infinite;
+        }
+
+        .flor-ramo:nth-of-type(9) {
+            left: 5%;
+            top: 95px;
+            font-size: 58px;
+            animation-delay: .2s;
+        }
+
+        .flor-ramo:nth-of-type(10) {
+            left: 13%;
+            top: 55px;
+            font-size: 72px;
+            animation-delay: .5s;
+        }
+
+        .flor-ramo:nth-of-type(11) {
+            left: 24%;
+            top: 25px;
+            font-size: 82px;
+            animation-delay: .8s;
+        }
+
+        .flor-ramo:nth-of-type(12) {
+            left: 36%;
+            top: 5px;
+            font-size: 92px;
+            animation-delay: .3s;
+        }
+
+        .flor-ramo:nth-of-type(13) {
+            left: 48%;
+            top: 0;
+            font-size: 105px;
+            animation-delay: .7s;
+        }
+
+        .flor-ramo:nth-of-type(14) {
+            left: 62%;
+            top: 15px;
+            font-size: 88px;
+            animation-delay: .4s;
+        }
+
+        .flor-ramo:nth-of-type(15) {
+            left: 74%;
+            top: 45px;
+            font-size: 76px;
+            animation-delay: .9s;
+        }
+
+        .flor-ramo:nth-of-type(16) {
+            left: 85%;
+            top: 90px;
+            font-size: 58px;
+            animation-delay: .6s;
+        }
+
+        .flor-ramo:nth-of-type(17) {
+            left: 17%;
+            top: 115px;
+            font-size: 62px;
+            animation-delay: 1.2s;
+        }
+
+        .flor-ramo:nth-of-type(18) {
+            left: 30%;
+            top: 90px;
+            font-size: 72px;
+            animation-delay: 1.4s;
+        }
+
+        .flor-ramo:nth-of-type(19) {
+            left: 43%;
+            top: 72px;
+            font-size: 78px;
+            animation-delay: 1s;
+        }
+
+        .flor-ramo:nth-of-type(20) {
+            left: 57%;
+            top: 82px;
+            font-size: 74px;
+            animation-delay: 1.3s;
+        }
+
+        .flor-ramo:nth-of-type(21) {
+            left: 70%;
+            top: 105px;
+            font-size: 62px;
+            animation-delay: 1.1s;
+        }
+
+        /* Hojas */
+
+        .hoja {
+            position: absolute;
+
+            z-index: 3;
+
+            width: 55px;
+            height: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #4f8c25,
+                    #91bd4a
+                );
+
+            border-radius: 100% 0 100% 0;
+
+            box-shadow:
+                0 3px 4px rgba(50, 90, 20, .2);
+        }
+
+        .hoja:nth-of-type(22) {
+            bottom: 75px;
+            left: 24%;
+            transform: rotate(-35deg);
+        }
+
+        .hoja:nth-of-type(23) {
+            bottom: 55px;
+            left: 35%;
+            transform: rotate(30deg);
+        }
+
+        .hoja:nth-of-type(24) {
+            bottom: 70px;
+            right: 34%;
+            transform: rotate(-25deg);
+        }
+
+        .hoja:nth-of-type(25) {
+            bottom: 50px;
+            right: 23%;
+            transform: rotate(35deg);
+        }
+
+        .hoja:nth-of-type(26) {
+            bottom: 30px;
+            left: 43%;
+            transform: rotate(-15deg);
+        }
+
+        /* Papel que envuelve el ramo */
+
+        .envoltorio {
+            position: absolute;
+
+            z-index: 6;
+
+            bottom: -5px;
+            left: 50%;
+
+            width: 220px;
+            height: 105px;
+
+            transform:
+                translateX(-50%)
+                perspective(200px)
+                rotateX(8deg);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fffdf0,
+                    #fff4bd,
+                    #f8d978
+                );
+
+            clip-path:
+                polygon(
+                    8% 0,
+                    92% 0,
+                    100% 100%,
+                    0 100%
+                );
+
+            border-radius: 5px 5px 25px 25px;
+
+            box-shadow:
+                0 8px 15px rgba(100, 70, 0, .18);
+        }
+
+        .cinta {
+            position: absolute;
+
+            z-index: 7;
+
+            bottom: 65px;
+            left: 50%;
+
+            width: 28px;
+            height: 65px;
+
+            transform: translateX(-50%);
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #e6a900,
+                    #ffd54f,
+                    #d99b00
+                );
+
+            border-radius: 5px;
+        }
+
+        .cinta::before,
+        .cinta::after {
+            content: "";
+
+            position: absolute;
+
+            bottom: -22px;
+
+            width: 38px;
+            height: 55px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffc107,
+                    #e0a000
+                );
+
+            border-radius: 5px 5px 20px 20px;
+        }
+
+        .cinta::before {
+            right: 10px;
+            transform: rotate(30deg);
+        }
+
+        .cinta::after {
+            left: 10px;
+            transform: rotate(-30deg);
+        }
+
+        @keyframes movimientoRamo {
+            0%, 100% {
+                transform: translateY(0) rotate(-2deg);
+            }
+
+            50% {
+                transform: translateY(-5px) rotate(2deg);
+            }
+        }
+
+
         /* =========================
            CORAZÓN
         ========================== */
 
         .corazon {
-            margin-top: 25px;
+            margin-top: 10px;
 
             font-size: 48px;
 
@@ -632,7 +988,7 @@
         ========================== */
 
         .firma {
-            margin-top: 25px;
+            margin-top: 15px;
 
             font-size: 17px;
 
@@ -650,17 +1006,13 @@
 
             .contenedor {
                 min-height: auto;
-
                 padding: 40px 15px;
-
                 align-items: flex-start;
             }
 
             .tarjeta {
                 padding: 35px 20px;
-
                 margin: 15px 0 30px;
-
                 border-radius: 28px;
             }
 
@@ -670,19 +1022,16 @@
 
             h1 {
                 font-size: 30px;
-
                 line-height: 1.25;
             }
 
             h2 {
                 font-size: 21px;
-
                 line-height: 1.4;
             }
 
             p {
                 font-size: 17px;
-
                 line-height: 1.7;
             }
 
@@ -693,8 +1042,6 @@
             .corazon {
                 font-size: 42px;
             }
-
-            /* Flores grandes en celular */
 
             .flor-1 {
                 font-size: 80px;
@@ -726,17 +1073,50 @@
 
             .marco-foto {
                 margin: 25px auto;
-
                 padding: 9px;
             }
-        }
 
+            /* Ramo en celular */
+
+            .ramo {
+                height: 250px;
+                transform: scale(.88);
+                transform-origin: center bottom;
+
+                margin-top: 10px;
+                margin-bottom: -10px;
+            }
+
+            .flor-ramo {
+                font-size: 60px;
+            }
+
+            .flor-ramo:nth-of-type(12) {
+                font-size: 72px;
+            }
+
+            .flor-ramo:nth-of-type(13) {
+                font-size: 82px;
+            }
+
+            .flor-ramo:nth-of-type(14) {
+                font-size: 70px;
+            }
+
+            .tallo {
+                height: 175px;
+            }
+
+            .envoltorio {
+                width: 190px;
+                height: 90px;
+            }
+        }
     </style>
 </head>
 
 
 <body>
-
 
     <!-- =========================
          FONDO
@@ -745,7 +1125,6 @@
     <div class="fondo">
 
         <div class="brillo"></div>
-
         <div class="brillo"></div>
 
     </div>
@@ -756,15 +1135,10 @@
     ========================== -->
 
     <div class="flor-grande flor-1">🌻</div>
-
     <div class="flor-grande flor-2">🌻</div>
-
     <div class="flor-grande flor-3">🌻</div>
-
     <div class="flor-grande flor-4">🌻</div>
-
     <div class="flor-grande flor-5">🌻</div>
-
     <div class="flor-grande flor-6">🌻</div>
 
 
@@ -804,7 +1178,6 @@
 
         <div class="tarjeta">
 
-
             <!-- FLOR PRINCIPAL -->
 
             <div class="flor-principal">
@@ -817,7 +1190,6 @@
             <h1>
                 Feliz Día de las Flores Amarillas 💛
             </h1>
-
 
             <h2>
                 Para una persona muy especial 🌼
@@ -889,11 +1261,59 @@
                 Gracias por formar parte de mi vida. 💛
             </p>
 
+            <!-- =================================================
+                 RAMO GRANDE Y ABUNDANTE
+            ================================================== -->
 
-            <!-- SEPARADOR -->
+            <div class="ramo">
 
-            <div class="separador">
-                🌻 🌼 🌻
+                <!-- Tallos -->
+
+                <div class="tallo"></div>
+                <div class="tallo"></div>
+                <div class="tallo"></div>
+                <div class="tallo"></div>
+                <div class="tallo"></div>
+                <div class="tallo"></div>
+                <div class="tallo"></div>
+                <div class="tallo"></div>
+
+
+                <!-- Flores grandes -->
+
+                <div class="flor-ramo">🌼</div>
+                <div class="flor-ramo">🌻</div>
+                <div class="flor-ramo">🌼</div>
+                <div class="flor-ramo">🌻</div>
+                <div class="flor-ramo">🌻</div>
+                <div class="flor-ramo">🌼</div>
+                <div class="flor-ramo">🌻</div>
+                <div class="flor-ramo">🌼</div>
+
+                <!-- Flores interiores -->
+
+                <div class="flor-ramo">🌼</div>
+                <div class="flor-ramo">🌻</div>
+                <div class="flor-ramo">🌼</div>
+                <div class="flor-ramo">🌻</div>
+                <div class="flor-ramo">🌼</div>
+
+
+                <!-- Hojas -->
+
+                <div class="hoja"></div>
+                <div class="hoja"></div>
+                <div class="hoja"></div>
+                <div class="hoja"></div>
+                <div class="hoja"></div>
+
+
+                <!-- Envoltorio -->
+
+                <div class="envoltorio"></div>
+
+                <div class="cinta"></div>
+
             </div>
 
 
@@ -910,11 +1330,10 @@
                 Con todo mi amor y cariño 💛
             </div>
 
-
         </div>
 
     </div>
 
-
 </body>
 </html>
+```
