@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para ti 💛</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            overflow: hidden;
+            font-family: "Georgia", serif;
+            background: linear-gradient(135deg, #fff8cf, #ffe680, #fff4a8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #5c4500;
+        }
+
+        .contenedor {
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.78);
+            padding: 40px 25px;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(120, 90, 0, 0.20);
+            position: relative;
+            z-index: 10;
+            animation: aparecer 1.5s ease;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            margin-bottom: 10px;
+            color: #d69e00;
+        }
+
+        .flor-principal {
+            font-size: 80px;
+            animation: flotar 3s ease-in-out infinite;
+            margin: 10px 0;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 10px 0 20px;
+        }
+
+        p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin: 12px 0;
+        }
+
+        .firma {
+            margin-top: 25px;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        .corazon {
+            color: #e9a900;
+            font-size: 28px;
+        }
+
+        .flor {
+            position: absolute;
+            font-size: 35px;
+            animation: caer linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes flotar {
+            0%, 100% {
+                transform: translateY(0) rotate(-3deg);
+            }
+
+            50% {
+                transform: translateY(-12px) rotate(3deg);
+            }
+        }
+
+        @keyframes caer {
+            from {
+                transform: translateY(-100px) rotate(0deg);
+            }
+
+            to {
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
+
+        .flor:nth-child(1) {
+            left: 5%;
+            animation-duration: 8s;
+        }
+
+        .flor:nth-child(2) {
+            left: 20%;
+            animation-duration: 11s;
+            animation-delay: 2s;
+        }
+
+        .flor:nth-child(3) {
+            left: 40%;
+            animation-duration: 9s;
+            animation-delay: 1s;
+        }
+
+        .flor:nth-child(4) {
+            left: 65%;
+            animation-duration: 12s;
+            animation-delay: 3s;
+        }
+
+        .flor:nth-child(5) {
+            left: 85%;
+            animation-duration: 10s;
+            animation-delay: 1s;
+        }
+
+        .boton {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 13px 25px;
+            background: #e8ad00;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            transform: scale(1.05);
+            background: #cf9800;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Flores cayendo -->
+    <div class="flor">🌼</div>
+    <div class="flor">🌻</div>
+    <div class="flor">🌼</div>
+    <div class="flor">🌻</div>
+    <div class="flor">🌼</div>
+
+    <div class="contenedor">
+
+        <div class="flor-principal">🌻</div>
+
+        <h1>Feliz día de las flores amarillas 💛</h1>
+
+        <h2>Para alguien muy especial</h2>
+
+        <p>
+            Hoy quería regalarte algo diferente...
+        </p>
+
+        <p>
+            Un pequeño detalle para recordarte que eres
+            una persona muy especial para mí.
+        </p>
+
+        <p>
+            Espero que estas flores te saquen una sonrisa
+            y que tengas un día tan bonito como tú. 🌻
+        </p>
+
+        <p>
+            Gracias por formar parte de mi vida.
+        </p>
+
+        <div class="corazon">💛</div>
+
+        <div class="firma">
+            Con mucho cariño, para ti 🌼
+        </div>
+
+    </div>
+
+</body>
+</html>
